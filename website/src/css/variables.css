@@ -1,0 +1,85 @@
+/* ====================================
+   NEOBRUTALIST DESIGN SYSTEM
+   Color Variables & Design Tokens
+   ==================================== */
+
+:root {
+    /* === COLORS === */
+    --c-bg: #f8f8ff; /* Ghost White background */
+    --c-card: #f5f5f5; /* White Smoke cards */
+    --c-border: #202020; /* Lead Black borders */
+    --c-text: #0a0a0a; /* Black text */
+    --c-text-inverse: #f5f5f5; /* White text on dark backgrounds */
+
+    /* Brand Colors */
+    --c-black: #2c2c2c; /* Carbon Black */
+    --c-white: #f5f5f5; /* White Smoke */
+    --c-primary: #ff90e8; /* Pink */
+    --c-secondary: #ffc900; /* Yellow */
+    --c-accent: #23a6d5; /* Blue */
+    --c-success: #00d084; /* Green */
+    --c-error: #ff6b6b; /* Red */
+
+    /* === BORDERS === */
+    --border-w: 3px;
+    --border-radius: 0px; /* Brutalism = no rounded corners */
+
+    /* === SHADOWS === */
+    --shadow: 5px 5px 0px 0px var(--c-border);
+    --shadow-hover: 2px 2px 0px 0px var(--c-border);
+    --shadow-lg: 8px 8px 0px 0px var(--c-border);
+
+    /* === SPACING === */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    /* === TYPOGRAPHY === */
+    --font-family: 'Archivo', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 3rem;
+    --font-size-5xl: 4rem;
+
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+
+    --line-height-tight: 1.1;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.7;
+
+    --letter-spacing-tight: -1px;
+    --letter-spacing-normal: 0px;
+    --letter-spacing-wide: 1px;
+
+    /* === CONTAINER === */
+    --container-max-width: 1000px;
+    --container-padding: 1rem;
+
+    /* Navigation sizing */
+    --nav-height: calc(44px + var(--space-md) * 2 + var(--border-w) * 2);
+    /*--nav-offset: calc(var(--container-padding) + var(--nav-height));*/
+
+    /* === TRANSITIONS === */
+    --transition-fast: all 0.1s ease;
+    --transition-normal: all 0.2s ease;
+
+    /* === Z-INDEX === */
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal: 400;
+    --z-popover: 500;
+    --z-tooltip: 600;
+}

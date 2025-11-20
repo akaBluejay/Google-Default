@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Assign captured inboxes to services and explore Google-Default's command palette."
+        />
+        <title>Google-Default - Dashboard</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="./assets/gd-icon.svg" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&display=swap" rel="stylesheet" />
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="./css/variables.css" />
+        <link rel="stylesheet" href="./css/components.css" />
+        <link rel="stylesheet" href="./css/dashboard.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Navigation -->
+            <nav class="navbar">
+                <a href="./home.html" class="brand">
+                    <img src="./assets/gd-icon.svg" alt="" class="brand-icon" />
+                    <span>Google-Default</span>
+                </a>
+
+                <!-- Hidden Toggle (true if the nav-drawer is open, prevent srolling, start animation of 'X' button)  -->
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+                <!-- Desktop Nav Links -->
+                <div class="nav-items">
+                    <a href="./home.html" class="nav-link">Home</a>
+                    <a href="./how-it-works.html" class="nav-link">How it works</a>
+                    <a href="./about.html" class="nav-link">About</a>
+                </div>
+
+                <!-- Actions (Dashboard + Hamburger buttons) -->
+                <div class="nav-actions">
+                    <a href="./dashboard.html" class="btn btn-secondary nav-cta">Dashboard</a>
+                    <label for="nav-toggle" class="nav-burger" aria-label="Navigation Menu">
+                        <!-- we use these span elements to create the 3 lines in the hamburger menu  -->
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+
+                <!-- Mobile-Friendly Nav Drawer -->
+                <div class="nav-drawer">
+                    <div class="nav-drawer-panel">
+                        <a href="./home.html" class="nav-link">Home</a>
+                        <a href="./how-it-works.html" class="nav-link">How it works</a>
+                        <a href="./about.html" class="nav-link">About</a>
+                        <a href="./dashboard.html" class="btn btn-primary nav-cta-drawer">Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="section dashboard">
+                <div class="box dashboard-shell">
+                    <header class="dashboard-header">
+                        <h1 class="dashboard-title">Dashboard</h1>
+                    </header>
+
+                    <div class="dashboard-main">
+                        <!-- Left (Top): Google Services -->
+                        <section class="dashboard-panel dashboard-services">
+                            <h2 class="dashboard-panel-title">Google Services</h2>
+
+                            <div class="dashboard-services-list">
+                                <div class="dashboard-service-row">
+                                    <div class="dashboard-service-label">Gmail</div>
+                                    <div class="dashboard-service-control">
+                                        <select id="gmail-account" name="gmail-account" class="form-select">
+                                            <option>personal@gmail.com</option>
+                                            <option>work@studio.com</option>
+                                            <option>social@gmail.com</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="dashboard-service-row dashboard-service-row-locked">
+                                    <div class="dashboard-service-label">Search</div>
+                                    <div class="dashboard-service-control">
+                                        <select class="form-select" disabled>
+                                            <option>Coming soon</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="dashboard-service-row dashboard-service-row-locked">
+                                    <div class="dashboard-service-label">Drive</div>
+                                    <div class="dashboard-service-control">
+                                        <select class="form-select" disabled>
+                                            <option>Coming soon</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dashboard-note">
+                                <strong>Note:</strong> Account changes to services are applied immediately.
+                            </div>
+                        </section>
+
+                        <!-- Right (bottom): Google Accounts -->
+                        <section class="dashboard-panel dashboard-accounts">
+                            <h2 class="dashboard-panel-title">Google Accounts</h2>
+
+                            <ul class="dashboard-accounts-list">
+                                <li class="dashboard-account-item dashboard-account-item-default">
+                                    <span class="dashboard-account-email">personal@gmail.com</span>
+                                    <button class="btn btn-xs dashboard-account-delete-danger" title="Delete">X</button>
+                                </li>
+
+                                <li class="dashboard-account-item">
+                                    <span class="dashboard-account-email">work@studio.com</span>
+                                    <button class="btn btn-xs dashboard-account-delete-danger" title="Delete">X</button>
+                                </li>
+
+                                <li class="dashboard-account-item">
+                                    <span class="dashboard-account-email">social@gmail.com</span>
+                                    <button class="btn btn-xs dashboard-account-delete-danger" title="Delete">X</button>
+                                </li>
+
+                                <li class="dashboard-account-item dashboard-account-item-add">
+                                    <button class="dashboard-account-add-btn">+ Add New Account</button>
+                                </li>
+                            </ul>
+
+                            <div class="dashboard-actions">
+                                <button class="btn btn-small btn-primary">Set Default</button>
+                                <button class="btn btn-small btn-outline">Clear All</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call To Action Section -->
+            <section class="cta-box cta-box-secondary">
+                <h2 style="font-weight: 900; font-size: 2rem">More Services Coming Soon</h2>
+                <p>We're working on Calendar, Meet, and Drive support. Stay tuned!</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center">
+                    <a href="./how-it-works.html" class="btn">Learn More</a>
+                    <a
+                        href="https://github.com/akaBluejay/gDefault"
+                        class="btn btn-outline"
+                        target="_blank"
+                        rel="noopener"
+                        >Source Code</a
+                    >
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <span>&copy; 2025 Jerome Boone (ID: 805578064)</span>
+                <a href="mailto:boone107@canton.edu" style="color: gray">boone107@canton.edu</a>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,92 @@
+/* About page - contact popup styles */
+
+.contact-toggle {
+    display: none;
+}
+
+.contact-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    padding: var(--space-md);
+}
+
+.contact-toggle:checked ~ .contact-popup {
+    display: flex;
+}
+
+.contact-popup-panel {
+    background: var(--c-card);
+    border: var(--border-w) solid var(--c-border);
+    box-shadow: var(--shadow-lg);
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.contact-popup-header {
+    background: var(--c-primary);
+    border-bottom: var(--border-w) solid var(--c-border);
+    padding: var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-popup-header h2 {
+    font-weight: var(--font-weight-black);
+    font-size: var(--font-size-2xl);
+    text-transform: uppercase;
+}
+
+.btn-close {
+    background: var(--c-black);
+    color: var(--c-text-inverse);
+    border: var(--border-w) solid var(--c-border);
+    box-shadow: var(--shadow);
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    font-weight: var(--font-weight-black);
+    line-height: 1;
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.btn-close:hover {
+    background: var(--c-error);
+    transform: translate(2px, 2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.contact-form {
+    padding: var(--space-xl);
+}
+
+.contact-form .form-group:last-of-type {
+    margin-bottom: var(--space-xl);
+}
+
+/* About page - hover animation for trust/tech stack/privacy boxes */
+.box.box-accent,
+.box.box-success,
+.box.box-secondary {
+    transition: var(--transition-fast);
+}
+
+.box.box-accent:hover,
+.box.box-success:hover,
+.box.box-secondary:hover {
+    transform: translate(2px, 2px);
+    box-shadow: var(--shadow-hover);
+}

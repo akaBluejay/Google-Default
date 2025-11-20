@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Default Google Account</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body data-theme="light">
+    <main class="popup">
+      <header class="popup__header">
+        <div>
+          <p class="popup__eyebrow">Default Google Account</p>
+          <h1 class="popup__title">Manage captured inboxes</h1>
+          <p class="popup__subtitle">
+            Set your default Gmail index, prune stale addresses, or add one manually.
+          </p>
+        </div>
+        <button
+          class="btn btn--primary"
+          type="button"
+          data-open-dashboard
+          data-dashboard-url="dashboard/dashboard.html"
+        >
+          Open dashboard
+        </button>
+      </header>
+
+      <section class="section" aria-labelledby="email-list-title">
+        <div class="section__heading">
+          <h2 class="section__title" id="email-list-title">Captured emails</h2>
+          <button class="btn btn--outline btn--small" type="button" data-refresh>Refresh</button>
+        </div>
+        <ul class="email-list" data-email-list></ul>
+        <p class="email-list__empty" data-empty-state hidden>
+          No emails detected yet. Visit Gmail or add one manually below.
+        </p>
+      </section>
+
+      <form class="add-email" data-add-email-form>
+        <label class="add-email__label" for="manual-email">Add email manually</label>
+        <div class="add-email__controls">
+          <input
+            class="add-email__input"
+            type="email"
+            id="manual-email"
+            name="email"
+            placeholder="name@example.com"
+            autocomplete="email"
+            required
+            data-add-email-input
+          />
+          <input
+            class="add-email__input add-email__input--index"
+            type="number"
+            min="0"
+            placeholder="Index"
+            title="Optional Gmail index"
+            data-add-email-index
+          />
+          <button class="btn btn--primary btn--small" type="submit">Save</button>
+        </div>
+      </form>
+
+      <div class="section section--actions">
+        <button class="btn btn--ghost btn--small" type="button" data-clear-default>
+          Clear default
+        </button>
+        <button class="btn btn--ghost btn--small" type="button" data-clear-emails>
+          Clear emails
+        </button>
+      </div>
+    </main>
+
+    <template id="email-item-template">
+      <li class="email-item">
+        <div class="email-item__identity">
+          <span class="email-item__avatar"></span>
+          <div class="email-item__meta">
+            <span class="email-item__email"></span>
+            <span class="email-item__index"></span>
+          </div>
+        </div>
+        <div class="email-item__actions">
+          <button class="btn btn--small btn--primary" type="button" data-set-default>
+            Set default
+          </button>
+          <button class="btn btn--small btn--ghost" type="button" data-delete-email>
+            Delete
+          </button>
+        </div>
+      </li>
+    </template>
+
+    <script src="./popup.js"></script>
+  </body>
+</html>

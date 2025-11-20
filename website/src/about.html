@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Learn about the team and motivations behind Google-Default." />
+        <title>Google-Default - About</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="./assets/gd-icon.svg" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&display=swap" rel="stylesheet" />
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="./css/variables.css" />
+        <link rel="stylesheet" href="./css/components.css" />
+        <link rel="stylesheet" href="./css/about.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Navigation -->
+            <nav class="navbar">
+                <a href="./home.html" class="brand">
+                    <img src="./assets/gd-icon.svg" alt="" class="brand-icon" />
+                    <span>Google-Default</span>
+                </a>
+
+                <!-- Hidden Toggle (true if the nav-drawer is open, prevent srolling, start animation of 'X' button)  -->
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+                <!-- Desktop Nav Links -->
+                <div class="nav-items">
+                    <a href="./home.html" class="nav-link">Home</a>
+                    <a href="./how-it-works.html" class="nav-link">How it works</a>
+                    <a href="./about.html" class="nav-link active">About</a>
+                </div>
+
+                <!-- Actions (Dashboard + Hamburger buttons) -->
+                <div class="nav-actions">
+                    <a href="./dashboard.html" class="btn btn-primary nav-cta">Dashboard</a>
+                    <label for="nav-toggle" class="nav-burger" aria-label="Navigation Menu">
+                        <!-- we use these span elements to create the 3 lines in the hamburger menu  -->
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+
+                <!-- Mobile-Friendly Nav Drawer -->
+                <div class="nav-drawer">
+                    <div class="nav-drawer-panel">
+                        <a href="./home.html" class="nav-link">Home</a>
+                        <a href="./how-it-works.html" class="nav-link">How it works</a>
+                        <a href="./about.html" class="nav-link">About</a>
+                        <a href="./dashboard.html" class="btn btn-primary nav-cta-drawer">Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero Header -->
+            <header class="header card-header-accent">
+                <span class="tag">About</span>
+                <h1>Always Free, Open&#8209;Source Forever.</h1>
+                <p>A student-built tool for Google users with multiple accounts</p>
+            </header>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-4">
+                <!-- 'Who Am I' Card -->
+                <div class="card">
+                    <div class="card-header card-header-secondary">
+                        <span style="font-weight: 700">Who Am I</span>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <h2 class="card-title">Jerome Boone</h2>
+                            <div class="mb-md">
+                                <span class="badge">Developer</span>
+                                <span class="badge badge-accent">Student</span>
+                            </div>
+
+                            <p class="card-text">ID: 805578064</p>
+                            <p class="card-text">
+                                I am a student at SUNY Canton, graduating with a Bachelor's Degree in Cybersecurity in
+                                December 2025. I made this website as an example for an open-source project I am
+                                building as well as for my GMMD330 Final Project.
+                            </p>
+                        </div>
+
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap">
+                            <a href="https://github.com/akaBluejay/" class="btn btn-small">GitHub</a>
+                            <a href="https://linkedin.com" class="btn btn-small btn-outline">LinkedIn</a>
+                            <a href="mailto:boone107@canton.edu" class="btn btn-small btn-outline">Email</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 'Mission' Card -->
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <span style="font-weight: 700">Mission</span>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">Why it exists</h2>
+                        <p class="card-text">
+                            In my personal and professional life, I use multiple Google accounts for Gmail, Google
+                            Drive, Search, Maps, and many other services. I don't always use the same account for each
+                            service, so I often have to switch between accounts depending on which service I visit. This
+                            project was started as a scripting experiment, and extended to a project that has benefit to
+                            those managing multiple Google accounts for different Google services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Info Cards -->
+            <div class="grid">
+                <div class="box box-accent">
+                    <h3 class="card-title mb-sm">
+                        <img src="./assets/handshake.png" alt="" class="inline-icon inline-icon-large" />
+                        Built with Trust
+                    </h3>
+                    <p>
+                        The codebase embraces an open-source content policy for transparency and collaboration. Every
+                        line of code is auditable.
+                    </p>
+                </div>
+
+                <div class="box box-success">
+                    <h3 class="card-title mb-sm">
+                        <img src="./assets/settings.png" alt="" class="inline-icon" />
+                        Tech Stack
+                    </h3>
+                    <p>
+                        Built purely with HTML, CSS, & JavaScript. No frameworks, no dependencies, just clean vanilla
+                        code.
+                    </p>
+                </div>
+
+                <div class="box box-secondary">
+                    <h3 class="card-title mb-sm">
+                        <img src="./assets/padlock.png" alt="" class="inline-icon" />
+                        Privacy First
+                    </h3>
+                    <p>
+                        Everything lives in local storage. No sync, no external servers, no tracking. Your data stays on
+                        your machine.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Call To Action Section -->
+            <section class="cta-box cta-box-primary">
+                <h2 style="font-weight: 900; font-size: 2rem">Let's Collaborate</h2>
+                <p>Have feedback or ideas? Reach out and help shape the project.</p>
+
+                <!-- Hidden checkbox for contact form popup -->
+                <input type="checkbox" id="contact-toggle" class="contact-toggle" />
+
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center">
+                    <label for="contact-toggle" class="btn">Contact Me</label>
+                    <a
+                        href="https://github.com/akaBluejay/gDefault"
+                        class="btn btn-outline"
+                        target="_blank"
+                        rel="noopener"
+                        >Source Code</a
+                    >
+                </div>
+
+                <!-- Contact Form Popup -->
+                <div class="contact-popup">
+                    <div class="contact-popup-panel">
+                        <div class="contact-popup-header">
+                            <h2>Contact Me</h2>
+                            <label for="contact-toggle" class="btn-close" aria-label="Close Contact Form">✕</label>
+                        </div>
+
+                        <form class="contact-form" action="./response.html" method="get">
+                            <div class="form-group">
+                                <label class="form-label" for="firstName">First Name *</label>
+                                <input
+                                    type="text"
+                                    class="form-input"
+                                    id="firstName"
+                                    name="firstName"
+                                    required
+                                    placeholder="First Name"
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="lastName">Last Name</label>
+                                <input
+                                    type="text"
+                                    class="form-input"
+                                    id="lastName"
+                                    name="lastName"
+                                    placeholder="Last Name"
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email *</label>
+                                <input
+                                    type="email"
+                                    class="form-input"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    placeholder="youremail@domain.com"
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="message">Message *</label>
+                                <textarea
+                                    class="form-textarea"
+                                    id="message"
+                                    name="message"
+                                    requiredplaceholder="Enter your message here"
+                                ></textarea>
+                            </div>
+
+                            <div style="display: flex; gap: 1rem">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                                <button type="reset" class="btn btn-outline">Clear</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <span>&copy; 2025 Jerome Boone (ID: 805578064)</span>
+                <a href="mailto:boone107@canton.edu" style="color: gray">boone107@canton.edu</a>
+            </footer>
+        </div>
+    </body>
+</html>

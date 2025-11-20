@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Stay tuned — a better way to use Google services is coming soon." />
+        <title>Google-Default - Coming Soon</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="./assets/gd-icon.svg" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&display=swap" rel="stylesheet" />
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="./css/variables.css" />
+        <link rel="stylesheet" href="./css/components.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Navigation -->
+            <nav class="navbar">
+                <a href="./home.html" class="brand">
+                    <img src="./assets/gd-icon.svg" alt="" class="brand-icon" />
+                    <span>Google-Default</span>
+                </a>
+
+                <!-- Hidden Toggle (true if the nav-drawer is open, prevent srolling, start animation of 'X' button)  -->
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+                <!-- Desktop Nav Links -->
+                <div class="nav-items">
+                    <a href="./home.html" class="nav-link">Home</a>
+                    <a href="./how-it-works.html" class="nav-link">How it works</a>
+                    <a href="./about.html" class="nav-link">About</a>
+                </div>
+
+                <!-- Actions (Dashboard + Hamburger buttons) -->
+                <div class="nav-actions">
+                    <a href="./dashboard.html" class="btn btn-primary nav-cta">Dashboard</a>
+                    <label for="nav-toggle" class="nav-burger" aria-label="Navigation Menu">
+                        <!-- we use these span elements to create the 3 lines in the hamburger menu  -->
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+
+                <!-- Mobile-Friendly Nav Drawer -->
+                <div class="nav-drawer">
+                    <div class="nav-drawer-panel">
+                        <a href="./home.html" class="nav-link">Home</a>
+                        <a href="./how-it-works.html" class="nav-link">How it works</a>
+                        <a href="./about.html" class="nav-link">About</a>
+                        <a href="./dashboard.html" class="btn btn-primary nav-cta-drawer">Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero Header -->
+            <header class="header card-header-success">
+                <span class="tag">Coming Soon</span>
+                <h1>Something exciting is on the horizon!</h1>
+                <p class="mb-xl">Stay tuned — a better way to use Google services is under development.</p>
+                <div class="btn-flex">
+                    <a href="./home.html" class="btn">Back Home</a>
+                    <a href="./about.html" class="btn btn-outline">Learn More</a>
+                </div>
+            </header>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <span>&copy; 2025 Jerome Boone (ID: 805578064)</span>
+                <a href="mailto:boone107@canton.edu" style="color: gray">boone107@canton.edu</a>
+            </footer>
+        </div>
+    </body>
+</html>

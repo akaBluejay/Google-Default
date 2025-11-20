@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Message sent successfully!" />
+        <title>Google-Default - Message Sent</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="./assets/gd-icon.svg" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&display=swap" rel="stylesheet" />
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="./css/variables.css" />
+        <link rel="stylesheet" href="./css/components.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Navigation -->
+            <nav class="navbar">
+                <a href="./home.html" class="brand">
+                    <img src="./assets/gd-icon.svg" alt="" class="brand-icon" />
+                    <span>Google-Default</span>
+                </a>
+
+                <!-- Hidden Toggle (true if the nav-drawer is open, prevent srolling, start animation of 'X' button)  -->
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+                <!-- Desktop Nav Links -->
+                <div class="nav-items">
+                    <a href="./home.html" class="nav-link">Home</a>
+                    <a href="./how-it-works.html" class="nav-link">How it works</a>
+                    <a href="./about.html" class="nav-link">About</a>
+                </div>
+
+                <!-- Actions (Dashboard + Hamburger buttons) -->
+                <div class="nav-actions">
+                    <a href="./dashboard.html" class="btn btn-primary nav-cta">Dashboard</a>
+                    <label for="nav-toggle" class="nav-burger" aria-label="Navigation Menu">
+                        <!-- we use these span elements to create the 3 lines in the hamburger menu  -->
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+
+                <!-- Mobile-Friendly Nav Drawer -->
+                <div class="nav-drawer">
+                    <div class="nav-drawer-panel">
+                        <a href="./home.html" class="nav-link">Home</a>
+                        <a href="./how-it-works.html" class="nav-link">How it works</a>
+                        <a href="./about.html" class="nav-link">About</a>
+                        <a href="./dashboard.html" class="btn btn-primary nav-cta-drawer">Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Success Message ('&#10003' = checkmark)-->
+            <header class="header" style="background: var(--c-success)">
+                <span class="tag" style="background: var(--c-card); color: var(--c-border)">Success</span>
+                <h1>Message Sent! &#10003;</h1>
+                <p>Thanks for reaching out. Your feedback is always appreciated.</p>
+            </header>
+
+            <!-- Message Details -->
+            <section class="section">
+                <div class="box box-primary">
+                    <h2 class="card-title mb-md">What You Sent</h2>
+                    <div class="grid grid-2">
+                        <div>
+                            <p class="form-label">First Name</p>
+                            <p class="card-text" id="display-firstName">—</p>
+                        </div>
+                        <div>
+                            <p class="form-label">Last Name</p>
+                            <p class="card-text" id="display-lastName">—</p>
+                        </div>
+                    </div>
+                    <div class="mt-lg">
+                        <p class="form-label">Email</p>
+                        <p class="card-text mb-lg" id="display-email">—</p>
+
+                        <p class="form-label">Message</p>
+                        <div class="box" style="background: var(--c-bg); padding: var(--space-md)">
+                            <p class="card-text" id="display-message">—</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call To Action Section -->
+            <section class="cta-box cta-box-secondary">
+                <h2 style="font-weight: 900; font-size: 2rem">What's Next?</h2>
+                <p>You will be notified if your feedback led to any changes. In the meantime, check out the project!</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center">
+                    <a href="./home.html" class="btn">Learn More</a>
+                    <a
+                        href="https://github.com/akaBluejay/gDefault"
+                        class="btn btn-outline"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub</a
+                    >
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <span>&copy; 2025 Jerome Boone (ID: 805578064)</span>
+                <a href="mailto:boone107@canton.edu" style="color: gray">boone107@canton.edu</a>
+            </footer>
+        </div>
+
+        <!-- Display form data from URL parameters -->
+        <script>
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search)
+
+            // Display the submitted data
+            document.getElementById('display-firstName').textContent = urlParams.get('firstName') || '—'
+            document.getElementById('display-lastName').textContent = urlParams.get('lastName') || '—'
+            document.getElementById('display-email').textContent = urlParams.get('email') || '—'
+            document.getElementById('display-message').textContent = urlParams.get('message') || '—'
+        </script>
+    </body>
+</html>

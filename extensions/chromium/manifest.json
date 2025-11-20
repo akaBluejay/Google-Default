@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Default Account Setter (dev)",
+  "version": "0.1.0",
+  "description": "Set a default Gmail account index and auto-redirect gmail.com to that /u/*/ index.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "notifications",
+    "scripting",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://gmail.com/*",
+    "https://www.gmail.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content_scrape.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  
+  "incognito": "split"
+}
+
+

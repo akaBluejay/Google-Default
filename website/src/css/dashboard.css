@@ -1,0 +1,239 @@
+/* Dashboard-specific styles */
+
+/* === SERVICE TABLE (Dashboard) === */
+.service-table {
+    border: var(--border-w) solid var(--c-border);
+    background: var(--c-card);
+    box-shadow: var(--shadow);
+}
+
+.service-row {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: var(--space-md);
+    align-items: center;
+    padding: var(--space-md);
+    border-bottom: var(--border-w) solid var(--c-border);
+}
+
+.service-row:last-child {
+    border-bottom: none;
+}
+
+.service-name {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-weight: var(--font-weight-black);
+    text-transform: uppercase;
+    font-size: var(--font-size-sm);
+}
+
+.service-control .form-select {
+    margin: 0;
+}
+
+.service-row-locked .form-select {
+    background: #eaeaea;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.service-row-locked {
+    background: #f4f4f4;
+    color: #666666;
+}
+
+/* === DASHBOARD === */
+.dashboard {
+    margin-top: var(--space-lg);
+}
+
+.dashboard-shell {
+    padding: 0;
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    background: var(--c-accent);
+    border-bottom: var(--border-w) solid var(--c-border);
+    padding: var(--space-md);
+}
+
+.dashboard-title {
+    font-weight: var(--font-weight-black);
+    font-size: var(--font-size-lg);
+    text-transform: uppercase;
+}
+
+.dashboard-main {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.dashboard-panel {
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.dashboard-panel-title {
+    font-weight: var(--font-weight-black);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+}
+
+/* Ensures separation between panels in vertical layout */
+.dashboard-services {
+    border-bottom: var(--border-w) solid var(--c-border);
+}
+
+/* Services */
+.dashboard-services-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.dashboard-service-row {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: var(--space-sm);
+    align-items: center;
+}
+
+.dashboard-service-label {
+    text-align: right;
+    font-weight: var(--font-weight-black);
+    text-transform: uppercase;
+    font-size: var(--font-size-sm);
+}
+
+.dashboard-service-row-locked .form-select {
+    background: #eaeaea;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.dashboard-service-row-locked {
+    color: #666666;
+}
+
+.dashboard-note {
+    margin-top: auto;
+    padding: var(--space-sm);
+    background: #f4f4f4;
+    border-left: 4px solid var(--c-secondary);
+    font-size: var(--font-size-sm);
+}
+
+/* Accounts */
+.dashboard-accounts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.dashboard-account-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    border: var(--border-w) solid var(--c-border);
+    background: var(--c-card);
+    padding: var(--space-sm);
+    box-shadow: var(--shadow);
+    transition: var(--transition-fast);
+}
+
+.dashboard-account-item:not(.dashboard-account-item-default):hover {
+    cursor: pointer;
+    transform: translate(2px, 2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.dashboard-account-item-default {
+    background: var(--c-secondary);
+}
+
+.dashboard-account-email {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xs);
+    word-break: break-all;
+}
+
+.dashboard-account-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.dashboard-account-delete-danger {
+    background: var(--c-error);
+    color: var(--c-text-inverse);
+}
+
+.dashboard-account-item-add {
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.dashboard-account-add-btn {
+    width: 100%;
+    background: var(--c-card);
+    border: var(--border-w) dashed var(--c-border);
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    box-shadow: 5px 5px 0 #e0e0e0;
+}
+
+.dashboard-account-add-btn:hover {
+    background: #e0e0e0;
+    border-style: solid;
+    transform: translate(2px, 2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.dashboard-actions {
+    margin-top: auto;
+    padding-top: var(--space-md);
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.dashboard-actions .btn {
+    flex: 1;
+    text-align: center;
+}
+
+/* Responsive layout for dashboard */
+@media (min-width: 700px) {
+    .dashboard-main {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    }
+
+    .dashboard-services {
+        border-right: var(--border-w) solid var(--c-border);
+        border-bottom: none;
+    }
+
+    .dashboard-accounts {
+        background: #f7f7f7;
+    }
+}

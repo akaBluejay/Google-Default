@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Default Google Account - Dashboard</title>
+        <link rel="stylesheet" href="./dashboard.css" />
+    </head>
+    <body data-theme="light">
+        <main class="page">
+            <header class="page__header" aria-labelledby="dashboard-title">
+                <p class="page__eyebrow">Control center</p>
+                <h1 class="page__title" id="dashboard-title">Assign inboxes and tune your defaults</h1>
+                <p class="page__lead">
+                    Drag emails by domain onto services or open the command palette to fuzzily search every captured
+                    address.
+                </p>
+            </header>
+
+            <div class="assignment-shell" data-assignment-root>
+                <section class="assignment-panel assignment-panel--emails" aria-label="Emails by domain">
+                    <header class="assignment-panel__header">
+                        <div>
+                            <h2 class="assignment-panel__title">Emails by domain</h2>
+                            <p class="assignment-panel__subtitle">
+                                Toggle domains to reveal inboxes. Drag an email onto a service card or use the palette.
+                            </p>
+                        </div>
+                        <button class="btn btn--outline btn--small" type="button" data-refresh-demo>
+                            Shuffle demo
+                        </button>
+                    </header>
+                    <div class="domain-groups" data-domain-groups></div>
+                </section>
+
+                <section class="assignment-panel assignment-panel--services" aria-label="Service defaults">
+                    <header class="assignment-panel__header">
+                        <div>
+                            <h2 class="assignment-panel__title">Service defaults</h2>
+                            <p class="assignment-panel__subtitle">
+                                Drop an inbox or open the palette to assign the best address for each Google surface.
+                            </p>
+                        </div>
+                        <button class="btn btn--outline btn--small" type="button" data-clear-assignments>
+                            Clear assignments
+                        </button>
+                    </header>
+                    <div class="services-grid" data-services-grid></div>
+                </section>
+            </div>
+        </main>
+
+        <div class="palette-overlay" data-palette-overlay hidden>
+            <div class="palette-modal" role="dialog" aria-modal="true" aria-labelledby="palette-service-label">
+                <header class="palette-header">
+                    <div class="palette-heading">
+                        <span class="palette-label">Assigning for</span>
+                        <h2 class="palette-service" id="palette-service-label" data-palette-service></h2>
+                    </div>
+                    <button class="palette-close" type="button" data-palette-close>Close</button>
+                </header>
+                <div class="palette-search">
+                    <input
+                        type="search"
+                        class="palette-input"
+                        placeholder="Search emails…"
+                        autocomplete="off"
+                        data-palette-input
+                    />
+                </div>
+                <div class="palette-results">
+                    <div class="results-grid" data-results-grid></div>
+                    <p class="palette-empty" data-palette-empty hidden>No matches found</p>
+                </div>
+            </div>
+        </div>
+
+        <template id="domain-group-template">
+            <article class="domain-group">
+                <div class="domain-header" data-domain-toggle>
+                    <div class="domain-heading">
+                        <span class="domain-title"></span>
+                        <span class="domain-count"></span>
+                    </div>
+                    <button class="domain-toggle" type="button"></button>
+                </div>
+                <div class="email-list"></div>
+            </article>
+        </template>
+
+        <template id="email-item-template">
+            <div class="email-item" draggable="true">
+                <div class="email-item-info">
+                    <span class="email-item-name"></span>
+                    <span class="email-item-address"></span>
+                </div>
+                <span class="email-item-domain"></span>
+            </div>
+        </template>
+
+        <template id="service-card-template">
+            <article class="service-card" data-service>
+                <header class="service-header">
+                    <div class="service-info">
+                        <h3></h3>
+                        <p>Drop email or open palette</p>
+                    </div>
+                    <span class="service-badge">—</span>
+                </header>
+                <footer class="service-footer">
+                    <div class="service-email">No email selected</div>
+                    <button class="palette-button" type="button">Open palette</button>
+                </footer>
+            </article>
+        </template>
+
+        <template id="result-item-template">
+            <div class="result-item">
+                <div class="result-info">
+                    <span class="result-name"></span>
+                    <span class="result-email"></span>
+                </div>
+                <button class="result-select" type="button">Select</button>
+            </div>
+        </template>
+
+        <script type="module" src="./dashboard.js"></script>
+    </body>
+</html>
